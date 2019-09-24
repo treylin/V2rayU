@@ -1110,7 +1110,7 @@ class V2rayConfig: NSObject {
 
             // request
             if steamJson["tcpSettings"]["header"]["request"].dictionaryValue.count > 0 {
-                var requestJson = steamJson["tcpSettings"]["header"]["request"]
+                let requestJson = steamJson["tcpSettings"]["header"]["request"]
                 var tcpRequest = TcpSettingHeaderRequest()
                 tcpRequest.version = requestJson["version"].stringValue
                 tcpRequest.method = requestJson["method"].stringValue
@@ -1140,7 +1140,7 @@ class V2rayConfig: NSObject {
 
             // response
             if steamJson["tcpSettings"]["header"]["response"].dictionaryValue.count > 0 {
-                var responseJson = steamJson["tcpSettings"]["header"]["response"]
+                let responseJson = steamJson["tcpSettings"]["header"]["response"]
                 var tcpResponse = TcpSettingHeaderResponse()
 
                 tcpResponse.version = responseJson["version"].stringValue

@@ -383,7 +383,7 @@ class VmessUri {
         // params
         let params = paramsStr.components(separatedBy: "&")
         for item in params {
-            var param = item.components(separatedBy: "=")
+            let param = item.components(separatedBy: "=")
             switch param[0] {
             case "network":
                 self.network = param[1]
@@ -517,7 +517,7 @@ class ShadowsockUri {
             self.error = "error: decodeUrl"
             return
         }
-        guard var parsedUrl = URLComponents(string: decodedUrl) else {
+        guard let parsedUrl = URLComponents(string: decodedUrl) else {
             self.error = "error: parsedUrl"
             return
         }
