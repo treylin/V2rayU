@@ -502,7 +502,7 @@ class V2rayConfig: NSObject {
 
         self.errors = []
 
-        guard var json = try? JSON(data: jsonText.data(using: String.Encoding.utf8, allowLossyConversion: false)!) else {
+        guard let json = try? JSON(data: jsonText.data(using: String.Encoding.utf8, allowLossyConversion: false)!) else {
             self.errors += ["invalid json"]
             return
         }
